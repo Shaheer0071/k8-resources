@@ -4,19 +4,23 @@ metadata:
   name: ebs-static
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  # PV name
   volumeName: ebs-static
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 20Gi
-
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: ebs-static
+  labels:
+    purpose: "ebs-static-demo"
 spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1d
   containers:
   - name: nginx
     image: nginx
@@ -27,5 +31,3 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static
-
-    
