@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ebs-static
+  name: ebs-dynamic
   labels:
     purpose: "ebs-dynamic-demo"
 spec:
@@ -45,5 +45,6 @@ spec:
     port: 80 # service port
     targetPort: 80
     nodePort: 30007
+    
 
 
