@@ -20,7 +20,7 @@ metadata:
     purpose: "ebs-dynamic-demo"
 spec:
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1d
+    topology.kubernetes.io/zone: us-east-1a
   containers:
   - name: nginx
     image: nginx
@@ -35,7 +35,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx-lb
+  name: nginx-dynamic
 spec:
   type: LoadBalancer
   selector: # labels are used as selectors
@@ -45,7 +45,7 @@ spec:
     port: 80 # service port
     targetPort: 80
     nodePort: 30007
-    
+
 
 
 
