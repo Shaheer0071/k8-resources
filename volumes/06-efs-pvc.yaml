@@ -10,8 +10,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-
-
+---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -43,4 +42,3 @@ spec:
     port: 80 # service port
     targetPort: 80
     nodePort: 30007
-    
