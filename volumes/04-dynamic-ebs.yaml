@@ -8,7 +8,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 19Gi
+      storage: 15Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -43,5 +43,5 @@ spec:
     port: 80 # service port
     targetPort: 80
     nodePort: 30007
-    
+
     
